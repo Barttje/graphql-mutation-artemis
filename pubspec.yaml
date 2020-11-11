@@ -1,0 +1,33 @@
+name: graphql_mutation_example
+description: Example project demonstrating how to perform a mutation on a Graphql Endpoint
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  graphql_flutter: ^3.0.0
+  datetime_picker_formfield: ^1.0.0
+  json_serializable: ^3.0.0
+  meta: '>=1.0.0 <2.0.0'
+  gql: '>=0.7.3 <1.0.0'
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.0
+
+dev_dependencies:
+  artemis: ^5.1.0
+  build_runner: ^1.5.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  uses-material-design: true

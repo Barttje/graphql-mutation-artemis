@@ -1,0 +1,1661 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: query_root
+    mutation: mutation_root
+    subscription: subscription_root
+}
+
+"columns and relationships of \"Constructor\""
+type Constructor {
+    "An array relationship"
+    RaceResults(
+        "distinct select on columns"
+        distinct_on: [RaceResult_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [RaceResult_order_by!],
+        "filter the rows returned"
+        where: RaceResult_bool_exp
+    ): [RaceResult!]!
+    "An aggregated array relationship"
+    RaceResults_aggregate(
+        "distinct select on columns"
+        distinct_on: [RaceResult_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [RaceResult_order_by!],
+        "filter the rows returned"
+        where: RaceResult_bool_exp
+    ): RaceResult_aggregate!
+    id: uuid!
+    name: String!
+}
+
+"aggregated selection of \"Constructor\""
+type Constructor_aggregate {
+    aggregate: Constructor_aggregate_fields
+    nodes: [Constructor!]!
+}
+
+"aggregate fields of \"Constructor\""
+type Constructor_aggregate_fields {
+    count(columns: [Constructor_select_column!], distinct: Boolean): Int
+    max: Constructor_max_fields
+    min: Constructor_min_fields
+}
+
+"aggregate max on columns"
+type Constructor_max_fields {
+    id: uuid
+    name: String
+}
+
+"aggregate min on columns"
+type Constructor_min_fields {
+    id: uuid
+    name: String
+}
+
+"response of any mutation on the table \"Constructor\""
+type Constructor_mutation_response {
+    "number of affected rows by the mutation"
+    affected_rows: Int!
+    "data of the affected rows by the mutation"
+    returning: [Constructor!]!
+}
+
+"columns and relationships of \"Driver\""
+type Driver {
+    "An array relationship"
+    RaceResults(
+        "distinct select on columns"
+        distinct_on: [RaceResult_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [RaceResult_order_by!],
+        "filter the rows returned"
+        where: RaceResult_bool_exp
+    ): [RaceResult!]!
+    "An aggregated array relationship"
+    RaceResults_aggregate(
+        "distinct select on columns"
+        distinct_on: [RaceResult_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [RaceResult_order_by!],
+        "filter the rows returned"
+        where: RaceResult_bool_exp
+    ): RaceResult_aggregate!
+    id: uuid!
+    name: String!
+}
+
+"aggregated selection of \"Driver\""
+type Driver_aggregate {
+    aggregate: Driver_aggregate_fields
+    nodes: [Driver!]!
+}
+
+"aggregate fields of \"Driver\""
+type Driver_aggregate_fields {
+    count(columns: [Driver_select_column!], distinct: Boolean): Int
+    max: Driver_max_fields
+    min: Driver_min_fields
+}
+
+"aggregate max on columns"
+type Driver_max_fields {
+    id: uuid
+    name: String
+}
+
+"aggregate min on columns"
+type Driver_min_fields {
+    id: uuid
+    name: String
+}
+
+"response of any mutation on the table \"Driver\""
+type Driver_mutation_response {
+    "number of affected rows by the mutation"
+    affected_rows: Int!
+    "data of the affected rows by the mutation"
+    returning: [Driver!]!
+}
+
+"columns and relationships of \"Race\""
+type Race {
+    "An array relationship"
+    RaceResults(
+        "distinct select on columns"
+        distinct_on: [RaceResult_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [RaceResult_order_by!],
+        "filter the rows returned"
+        where: RaceResult_bool_exp
+    ): [RaceResult!]!
+    "An aggregated array relationship"
+    RaceResults_aggregate(
+        "distinct select on columns"
+        distinct_on: [RaceResult_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [RaceResult_order_by!],
+        "filter the rows returned"
+        where: RaceResult_bool_exp
+    ): RaceResult_aggregate!
+    "An object relationship"
+    Season: Season!
+    date: date!
+    id: uuid!
+    name: String!
+    round: Int!
+    season_id: uuid!
+}
+
+"columns and relationships of \"RaceResult\""
+type RaceResult {
+    "An object relationship"
+    Constructor: Constructor!
+    "An object relationship"
+    Driver: Driver!
+    "An object relationship"
+    Race: Race!
+    constructor_id: uuid!
+    driver_id: uuid!
+    id: uuid!
+    points: Int!
+    position: Int!
+    race_id: uuid!
+}
+
+"aggregated selection of \"RaceResult\""
+type RaceResult_aggregate {
+    aggregate: RaceResult_aggregate_fields
+    nodes: [RaceResult!]!
+}
+
+"aggregate fields of \"RaceResult\""
+type RaceResult_aggregate_fields {
+    avg: RaceResult_avg_fields
+    count(columns: [RaceResult_select_column!], distinct: Boolean): Int
+    max: RaceResult_max_fields
+    min: RaceResult_min_fields
+    stddev: RaceResult_stddev_fields
+    stddev_pop: RaceResult_stddev_pop_fields
+    stddev_samp: RaceResult_stddev_samp_fields
+    sum: RaceResult_sum_fields
+    var_pop: RaceResult_var_pop_fields
+    var_samp: RaceResult_var_samp_fields
+    variance: RaceResult_variance_fields
+}
+
+"aggregate avg on columns"
+type RaceResult_avg_fields {
+    points: Float
+    position: Float
+}
+
+"aggregate max on columns"
+type RaceResult_max_fields {
+    constructor_id: uuid
+    driver_id: uuid
+    id: uuid
+    points: Int
+    position: Int
+    race_id: uuid
+}
+
+"aggregate min on columns"
+type RaceResult_min_fields {
+    constructor_id: uuid
+    driver_id: uuid
+    id: uuid
+    points: Int
+    position: Int
+    race_id: uuid
+}
+
+"response of any mutation on the table \"RaceResult\""
+type RaceResult_mutation_response {
+    "number of affected rows by the mutation"
+    affected_rows: Int!
+    "data of the affected rows by the mutation"
+    returning: [RaceResult!]!
+}
+
+"aggregate stddev on columns"
+type RaceResult_stddev_fields {
+    points: Float
+    position: Float
+}
+
+"aggregate stddev_pop on columns"
+type RaceResult_stddev_pop_fields {
+    points: Float
+    position: Float
+}
+
+"aggregate stddev_samp on columns"
+type RaceResult_stddev_samp_fields {
+    points: Float
+    position: Float
+}
+
+"aggregate sum on columns"
+type RaceResult_sum_fields {
+    points: Int
+    position: Int
+}
+
+"aggregate var_pop on columns"
+type RaceResult_var_pop_fields {
+    points: Float
+    position: Float
+}
+
+"aggregate var_samp on columns"
+type RaceResult_var_samp_fields {
+    points: Float
+    position: Float
+}
+
+"aggregate variance on columns"
+type RaceResult_variance_fields {
+    points: Float
+    position: Float
+}
+
+"aggregated selection of \"Race\""
+type Race_aggregate {
+    aggregate: Race_aggregate_fields
+    nodes: [Race!]!
+}
+
+"aggregate fields of \"Race\""
+type Race_aggregate_fields {
+    avg: Race_avg_fields
+    count(columns: [Race_select_column!], distinct: Boolean): Int
+    max: Race_max_fields
+    min: Race_min_fields
+    stddev: Race_stddev_fields
+    stddev_pop: Race_stddev_pop_fields
+    stddev_samp: Race_stddev_samp_fields
+    sum: Race_sum_fields
+    var_pop: Race_var_pop_fields
+    var_samp: Race_var_samp_fields
+    variance: Race_variance_fields
+}
+
+"aggregate avg on columns"
+type Race_avg_fields {
+    round: Float
+}
+
+"aggregate max on columns"
+type Race_max_fields {
+    date: date
+    id: uuid
+    name: String
+    round: Int
+    season_id: uuid
+}
+
+"aggregate min on columns"
+type Race_min_fields {
+    date: date
+    id: uuid
+    name: String
+    round: Int
+    season_id: uuid
+}
+
+"response of any mutation on the table \"Race\""
+type Race_mutation_response {
+    "number of affected rows by the mutation"
+    affected_rows: Int!
+    "data of the affected rows by the mutation"
+    returning: [Race!]!
+}
+
+"aggregate stddev on columns"
+type Race_stddev_fields {
+    round: Float
+}
+
+"aggregate stddev_pop on columns"
+type Race_stddev_pop_fields {
+    round: Float
+}
+
+"aggregate stddev_samp on columns"
+type Race_stddev_samp_fields {
+    round: Float
+}
+
+"aggregate sum on columns"
+type Race_sum_fields {
+    round: Int
+}
+
+"aggregate var_pop on columns"
+type Race_var_pop_fields {
+    round: Float
+}
+
+"aggregate var_samp on columns"
+type Race_var_samp_fields {
+    round: Float
+}
+
+"aggregate variance on columns"
+type Race_variance_fields {
+    round: Float
+}
+
+"columns and relationships of \"Season\""
+type Season {
+    "An array relationship"
+    Races(
+        "distinct select on columns"
+        distinct_on: [Race_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Race_order_by!],
+        "filter the rows returned"
+        where: Race_bool_exp
+    ): [Race!]!
+    "An aggregated array relationship"
+    Races_aggregate(
+        "distinct select on columns"
+        distinct_on: [Race_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Race_order_by!],
+        "filter the rows returned"
+        where: Race_bool_exp
+    ): Race_aggregate!
+    id: uuid!
+    name: String!
+}
+
+"aggregated selection of \"Season\""
+type Season_aggregate {
+    aggregate: Season_aggregate_fields
+    nodes: [Season!]!
+}
+
+"aggregate fields of \"Season\""
+type Season_aggregate_fields {
+    count(columns: [Season_select_column!], distinct: Boolean): Int
+    max: Season_max_fields
+    min: Season_min_fields
+}
+
+"aggregate max on columns"
+type Season_max_fields {
+    id: uuid
+    name: String
+}
+
+"aggregate min on columns"
+type Season_min_fields {
+    id: uuid
+    name: String
+}
+
+"response of any mutation on the table \"Season\""
+type Season_mutation_response {
+    "number of affected rows by the mutation"
+    affected_rows: Int!
+    "data of the affected rows by the mutation"
+    returning: [Season!]!
+}
+
+"mutation root"
+type mutation_root {
+    "delete data from the table: \"Constructor\""
+    delete_Constructor(
+        "filter the rows which have to be deleted"
+        where: Constructor_bool_exp!
+    ): Constructor_mutation_response
+    "delete single row from the table: \"Constructor\""
+    delete_Constructor_by_pk(id: uuid!): Constructor
+    "delete data from the table: \"Driver\""
+    delete_Driver(
+        "filter the rows which have to be deleted"
+        where: Driver_bool_exp!
+    ): Driver_mutation_response
+    "delete single row from the table: \"Driver\""
+    delete_Driver_by_pk(id: uuid!): Driver
+    "delete data from the table: \"Race\""
+    delete_Race(
+        "filter the rows which have to be deleted"
+        where: Race_bool_exp!
+    ): Race_mutation_response
+    "delete data from the table: \"RaceResult\""
+    delete_RaceResult(
+        "filter the rows which have to be deleted"
+        where: RaceResult_bool_exp!
+    ): RaceResult_mutation_response
+    "delete single row from the table: \"RaceResult\""
+    delete_RaceResult_by_pk(id: uuid!): RaceResult
+    "delete single row from the table: \"Race\""
+    delete_Race_by_pk(id: uuid!): Race
+    "delete data from the table: \"Season\""
+    delete_Season(
+        "filter the rows which have to be deleted"
+        where: Season_bool_exp!
+    ): Season_mutation_response
+    "delete single row from the table: \"Season\""
+    delete_Season_by_pk(id: uuid!): Season
+    "insert data into the table: \"Constructor\""
+    insert_Constructor(
+        "the rows to be inserted"
+        objects: [Constructor_insert_input!]!,
+        "on conflict condition"
+        on_conflict: Constructor_on_conflict
+    ): Constructor_mutation_response
+    "insert a single row into the table: \"Constructor\""
+    insert_Constructor_one(
+        "the row to be inserted"
+        object: Constructor_insert_input!,
+        "on conflict condition"
+        on_conflict: Constructor_on_conflict
+    ): Constructor
+    "insert data into the table: \"Driver\""
+    insert_Driver(
+        "the rows to be inserted"
+        objects: [Driver_insert_input!]!,
+        "on conflict condition"
+        on_conflict: Driver_on_conflict
+    ): Driver_mutation_response
+    "insert a single row into the table: \"Driver\""
+    insert_Driver_one(
+        "the row to be inserted"
+        object: Driver_insert_input!,
+        "on conflict condition"
+        on_conflict: Driver_on_conflict
+    ): Driver
+    "insert data into the table: \"Race\""
+    insert_Race(
+        "the rows to be inserted"
+        objects: [Race_insert_input!]!,
+        "on conflict condition"
+        on_conflict: Race_on_conflict
+    ): Race_mutation_response
+    "insert data into the table: \"RaceResult\""
+    insert_RaceResult(
+        "the rows to be inserted"
+        objects: [RaceResult_insert_input!]!,
+        "on conflict condition"
+        on_conflict: RaceResult_on_conflict
+    ): RaceResult_mutation_response
+    "insert a single row into the table: \"RaceResult\""
+    insert_RaceResult_one(
+        "the row to be inserted"
+        object: RaceResult_insert_input!,
+        "on conflict condition"
+        on_conflict: RaceResult_on_conflict
+    ): RaceResult
+    "insert a single row into the table: \"Race\""
+    insert_Race_one(
+        "the row to be inserted"
+        object: Race_insert_input!,
+        "on conflict condition"
+        on_conflict: Race_on_conflict
+    ): Race
+    "insert data into the table: \"Season\""
+    insert_Season(
+        "the rows to be inserted"
+        objects: [Season_insert_input!]!,
+        "on conflict condition"
+        on_conflict: Season_on_conflict
+    ): Season_mutation_response
+    "insert a single row into the table: \"Season\""
+    insert_Season_one(
+        "the row to be inserted"
+        object: Season_insert_input!,
+        "on conflict condition"
+        on_conflict: Season_on_conflict
+    ): Season
+    "update data of the table: \"Constructor\""
+    update_Constructor(
+        "sets the columns of the filtered rows to the given values"
+        _set: Constructor_set_input,
+        "filter the rows which have to be updated"
+        where: Constructor_bool_exp!
+    ): Constructor_mutation_response
+    "update single row of the table: \"Constructor\""
+    update_Constructor_by_pk(
+        "sets the columns of the filtered rows to the given values"
+        _set: Constructor_set_input,
+        pk_columns: Constructor_pk_columns_input!
+    ): Constructor
+    "update data of the table: \"Driver\""
+    update_Driver(
+        "sets the columns of the filtered rows to the given values"
+        _set: Driver_set_input,
+        "filter the rows which have to be updated"
+        where: Driver_bool_exp!
+    ): Driver_mutation_response
+    "update single row of the table: \"Driver\""
+    update_Driver_by_pk(
+        "sets the columns of the filtered rows to the given values"
+        _set: Driver_set_input,
+        pk_columns: Driver_pk_columns_input!
+    ): Driver
+    "update data of the table: \"Race\""
+    update_Race(
+        "increments the integer columns with given value of the filtered values"
+        _inc: Race_inc_input,
+        "sets the columns of the filtered rows to the given values"
+        _set: Race_set_input,
+        "filter the rows which have to be updated"
+        where: Race_bool_exp!
+    ): Race_mutation_response
+    "update data of the table: \"RaceResult\""
+    update_RaceResult(
+        "increments the integer columns with given value of the filtered values"
+        _inc: RaceResult_inc_input,
+        "sets the columns of the filtered rows to the given values"
+        _set: RaceResult_set_input,
+        "filter the rows which have to be updated"
+        where: RaceResult_bool_exp!
+    ): RaceResult_mutation_response
+    "update single row of the table: \"RaceResult\""
+    update_RaceResult_by_pk(
+        "increments the integer columns with given value of the filtered values"
+        _inc: RaceResult_inc_input,
+        "sets the columns of the filtered rows to the given values"
+        _set: RaceResult_set_input,
+        pk_columns: RaceResult_pk_columns_input!
+    ): RaceResult
+    "update single row of the table: \"Race\""
+    update_Race_by_pk(
+        "increments the integer columns with given value of the filtered values"
+        _inc: Race_inc_input,
+        "sets the columns of the filtered rows to the given values"
+        _set: Race_set_input,
+        pk_columns: Race_pk_columns_input!
+    ): Race
+    "update data of the table: \"Season\""
+    update_Season(
+        "sets the columns of the filtered rows to the given values"
+        _set: Season_set_input,
+        "filter the rows which have to be updated"
+        where: Season_bool_exp!
+    ): Season_mutation_response
+    "update single row of the table: \"Season\""
+    update_Season_by_pk(
+        "sets the columns of the filtered rows to the given values"
+        _set: Season_set_input,
+        pk_columns: Season_pk_columns_input!
+    ): Season
+}
+
+"query root"
+type query_root {
+    "fetch data from the table: \"Constructor\""
+    Constructor(
+        "distinct select on columns"
+        distinct_on: [Constructor_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Constructor_order_by!],
+        "filter the rows returned"
+        where: Constructor_bool_exp
+    ): [Constructor!]!
+    "fetch aggregated fields from the table: \"Constructor\""
+    Constructor_aggregate(
+        "distinct select on columns"
+        distinct_on: [Constructor_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Constructor_order_by!],
+        "filter the rows returned"
+        where: Constructor_bool_exp
+    ): Constructor_aggregate!
+    "fetch data from the table: \"Constructor\" using primary key columns"
+    Constructor_by_pk(id: uuid!): Constructor
+    "fetch data from the table: \"Driver\""
+    Driver(
+        "distinct select on columns"
+        distinct_on: [Driver_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Driver_order_by!],
+        "filter the rows returned"
+        where: Driver_bool_exp
+    ): [Driver!]!
+    "fetch aggregated fields from the table: \"Driver\""
+    Driver_aggregate(
+        "distinct select on columns"
+        distinct_on: [Driver_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Driver_order_by!],
+        "filter the rows returned"
+        where: Driver_bool_exp
+    ): Driver_aggregate!
+    "fetch data from the table: \"Driver\" using primary key columns"
+    Driver_by_pk(id: uuid!): Driver
+    "fetch data from the table: \"Race\""
+    Race(
+        "distinct select on columns"
+        distinct_on: [Race_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Race_order_by!],
+        "filter the rows returned"
+        where: Race_bool_exp
+    ): [Race!]!
+    "fetch data from the table: \"RaceResult\""
+    RaceResult(
+        "distinct select on columns"
+        distinct_on: [RaceResult_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [RaceResult_order_by!],
+        "filter the rows returned"
+        where: RaceResult_bool_exp
+    ): [RaceResult!]!
+    "fetch aggregated fields from the table: \"RaceResult\""
+    RaceResult_aggregate(
+        "distinct select on columns"
+        distinct_on: [RaceResult_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [RaceResult_order_by!],
+        "filter the rows returned"
+        where: RaceResult_bool_exp
+    ): RaceResult_aggregate!
+    "fetch data from the table: \"RaceResult\" using primary key columns"
+    RaceResult_by_pk(id: uuid!): RaceResult
+    "fetch aggregated fields from the table: \"Race\""
+    Race_aggregate(
+        "distinct select on columns"
+        distinct_on: [Race_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Race_order_by!],
+        "filter the rows returned"
+        where: Race_bool_exp
+    ): Race_aggregate!
+    "fetch data from the table: \"Race\" using primary key columns"
+    Race_by_pk(id: uuid!): Race
+    "fetch data from the table: \"Season\""
+    Season(
+        "distinct select on columns"
+        distinct_on: [Season_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Season_order_by!],
+        "filter the rows returned"
+        where: Season_bool_exp
+    ): [Season!]!
+    "fetch aggregated fields from the table: \"Season\""
+    Season_aggregate(
+        "distinct select on columns"
+        distinct_on: [Season_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Season_order_by!],
+        "filter the rows returned"
+        where: Season_bool_exp
+    ): Season_aggregate!
+    "fetch data from the table: \"Season\" using primary key columns"
+    Season_by_pk(id: uuid!): Season
+}
+
+"subscription root"
+type subscription_root {
+    "fetch data from the table: \"Constructor\""
+    Constructor(
+        "distinct select on columns"
+        distinct_on: [Constructor_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Constructor_order_by!],
+        "filter the rows returned"
+        where: Constructor_bool_exp
+    ): [Constructor!]!
+    "fetch aggregated fields from the table: \"Constructor\""
+    Constructor_aggregate(
+        "distinct select on columns"
+        distinct_on: [Constructor_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Constructor_order_by!],
+        "filter the rows returned"
+        where: Constructor_bool_exp
+    ): Constructor_aggregate!
+    "fetch data from the table: \"Constructor\" using primary key columns"
+    Constructor_by_pk(id: uuid!): Constructor
+    "fetch data from the table: \"Driver\""
+    Driver(
+        "distinct select on columns"
+        distinct_on: [Driver_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Driver_order_by!],
+        "filter the rows returned"
+        where: Driver_bool_exp
+    ): [Driver!]!
+    "fetch aggregated fields from the table: \"Driver\""
+    Driver_aggregate(
+        "distinct select on columns"
+        distinct_on: [Driver_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Driver_order_by!],
+        "filter the rows returned"
+        where: Driver_bool_exp
+    ): Driver_aggregate!
+    "fetch data from the table: \"Driver\" using primary key columns"
+    Driver_by_pk(id: uuid!): Driver
+    "fetch data from the table: \"Race\""
+    Race(
+        "distinct select on columns"
+        distinct_on: [Race_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Race_order_by!],
+        "filter the rows returned"
+        where: Race_bool_exp
+    ): [Race!]!
+    "fetch data from the table: \"RaceResult\""
+    RaceResult(
+        "distinct select on columns"
+        distinct_on: [RaceResult_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [RaceResult_order_by!],
+        "filter the rows returned"
+        where: RaceResult_bool_exp
+    ): [RaceResult!]!
+    "fetch aggregated fields from the table: \"RaceResult\""
+    RaceResult_aggregate(
+        "distinct select on columns"
+        distinct_on: [RaceResult_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [RaceResult_order_by!],
+        "filter the rows returned"
+        where: RaceResult_bool_exp
+    ): RaceResult_aggregate!
+    "fetch data from the table: \"RaceResult\" using primary key columns"
+    RaceResult_by_pk(id: uuid!): RaceResult
+    "fetch aggregated fields from the table: \"Race\""
+    Race_aggregate(
+        "distinct select on columns"
+        distinct_on: [Race_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Race_order_by!],
+        "filter the rows returned"
+        where: Race_bool_exp
+    ): Race_aggregate!
+    "fetch data from the table: \"Race\" using primary key columns"
+    Race_by_pk(id: uuid!): Race
+    "fetch data from the table: \"Season\""
+    Season(
+        "distinct select on columns"
+        distinct_on: [Season_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Season_order_by!],
+        "filter the rows returned"
+        where: Season_bool_exp
+    ): [Season!]!
+    "fetch aggregated fields from the table: \"Season\""
+    Season_aggregate(
+        "distinct select on columns"
+        distinct_on: [Season_select_column!],
+        "limit the number of rows returned"
+        limit: Int,
+        "skip the first n rows. Use only with order_by"
+        offset: Int,
+        "sort the rows by one or more columns"
+        order_by: [Season_order_by!],
+        "filter the rows returned"
+        where: Season_bool_exp
+    ): Season_aggregate!
+    "fetch data from the table: \"Season\" using primary key columns"
+    Season_by_pk(id: uuid!): Season
+}
+
+"unique or primary key constraints on table \"Constructor\""
+enum Constructor_constraint {
+    "unique or primary key constraint"
+    Constructor_pkey
+}
+
+"select columns of table \"Constructor\""
+enum Constructor_select_column {
+    "column name"
+    id
+    "column name"
+    name
+}
+
+"update columns of table \"Constructor\""
+enum Constructor_update_column {
+    "column name"
+    id
+    "column name"
+    name
+}
+
+"unique or primary key constraints on table \"Driver\""
+enum Driver_constraint {
+    "unique or primary key constraint"
+    Driver_pkey
+}
+
+"select columns of table \"Driver\""
+enum Driver_select_column {
+    "column name"
+    id
+    "column name"
+    name
+}
+
+"update columns of table \"Driver\""
+enum Driver_update_column {
+    "column name"
+    id
+    "column name"
+    name
+}
+
+"unique or primary key constraints on table \"RaceResult\""
+enum RaceResult_constraint {
+    "unique or primary key constraint"
+    RaceResult_pkey
+}
+
+"select columns of table \"RaceResult\""
+enum RaceResult_select_column {
+    "column name"
+    constructor_id
+    "column name"
+    driver_id
+    "column name"
+    id
+    "column name"
+    points
+    "column name"
+    position
+    "column name"
+    race_id
+}
+
+"update columns of table \"RaceResult\""
+enum RaceResult_update_column {
+    "column name"
+    constructor_id
+    "column name"
+    driver_id
+    "column name"
+    id
+    "column name"
+    points
+    "column name"
+    position
+    "column name"
+    race_id
+}
+
+"unique or primary key constraints on table \"Race\""
+enum Race_constraint {
+    "unique or primary key constraint"
+    Race_name_key
+    "unique or primary key constraint"
+    Race_pkey
+}
+
+"select columns of table \"Race\""
+enum Race_select_column {
+    "column name"
+    date
+    "column name"
+    id
+    "column name"
+    name
+    "column name"
+    round
+    "column name"
+    season_id
+}
+
+"update columns of table \"Race\""
+enum Race_update_column {
+    "column name"
+    date
+    "column name"
+    id
+    "column name"
+    name
+    "column name"
+    round
+    "column name"
+    season_id
+}
+
+"unique or primary key constraints on table \"Season\""
+enum Season_constraint {
+    "unique or primary key constraint"
+    Season_name_key
+    "unique or primary key constraint"
+    Season_pkey
+}
+
+"select columns of table \"Season\""
+enum Season_select_column {
+    "column name"
+    id
+    "column name"
+    name
+}
+
+"update columns of table \"Season\""
+enum Season_update_column {
+    "column name"
+    id
+    "column name"
+    name
+}
+
+"column ordering options"
+enum order_by {
+    "in the ascending order, nulls last"
+    asc
+    "in the ascending order, nulls first"
+    asc_nulls_first
+    "in the ascending order, nulls last"
+    asc_nulls_last
+    "in the descending order, nulls first"
+    desc
+    "in the descending order, nulls first"
+    desc_nulls_first
+    "in the descending order, nulls last"
+    desc_nulls_last
+}
+
+"order by aggregate values of table \"Constructor\""
+input Constructor_aggregate_order_by {
+    count: order_by
+    max: Constructor_max_order_by
+    min: Constructor_min_order_by
+}
+
+"input type for inserting array relation for remote table \"Constructor\""
+input Constructor_arr_rel_insert_input {
+    data: [Constructor_insert_input!]!
+    on_conflict: Constructor_on_conflict
+}
+
+"Boolean expression to filter rows from the table \"Constructor\". All fields are combined with a logical 'AND'."
+input Constructor_bool_exp {
+    RaceResults: RaceResult_bool_exp
+    _and: [Constructor_bool_exp]
+    _not: Constructor_bool_exp
+    _or: [Constructor_bool_exp]
+    id: uuid_comparison_exp
+    name: String_comparison_exp
+}
+
+"input type for inserting data into table \"Constructor\""
+input Constructor_insert_input {
+    RaceResults: RaceResult_arr_rel_insert_input
+    id: uuid
+    name: String
+}
+
+"order by max() on columns of table \"Constructor\""
+input Constructor_max_order_by {
+    id: order_by
+    name: order_by
+}
+
+"order by min() on columns of table \"Constructor\""
+input Constructor_min_order_by {
+    id: order_by
+    name: order_by
+}
+
+"input type for inserting object relation for remote table \"Constructor\""
+input Constructor_obj_rel_insert_input {
+    data: Constructor_insert_input!
+    on_conflict: Constructor_on_conflict
+}
+
+"on conflict condition type for table \"Constructor\""
+input Constructor_on_conflict {
+    constraint: Constructor_constraint!
+    update_columns: [Constructor_update_column!]!
+    where: Constructor_bool_exp
+}
+
+"ordering options when selecting data from \"Constructor\""
+input Constructor_order_by {
+    RaceResults_aggregate: RaceResult_aggregate_order_by
+    id: order_by
+    name: order_by
+}
+
+"primary key columns input for table: \"Constructor\""
+input Constructor_pk_columns_input {
+    id: uuid!
+}
+
+"input type for updating data in table \"Constructor\""
+input Constructor_set_input {
+    id: uuid
+    name: String
+}
+
+"order by aggregate values of table \"Driver\""
+input Driver_aggregate_order_by {
+    count: order_by
+    max: Driver_max_order_by
+    min: Driver_min_order_by
+}
+
+"input type for inserting array relation for remote table \"Driver\""
+input Driver_arr_rel_insert_input {
+    data: [Driver_insert_input!]!
+    on_conflict: Driver_on_conflict
+}
+
+"Boolean expression to filter rows from the table \"Driver\". All fields are combined with a logical 'AND'."
+input Driver_bool_exp {
+    RaceResults: RaceResult_bool_exp
+    _and: [Driver_bool_exp]
+    _not: Driver_bool_exp
+    _or: [Driver_bool_exp]
+    id: uuid_comparison_exp
+    name: String_comparison_exp
+}
+
+"input type for inserting data into table \"Driver\""
+input Driver_insert_input {
+    RaceResults: RaceResult_arr_rel_insert_input
+    id: uuid
+    name: String
+}
+
+"order by max() on columns of table \"Driver\""
+input Driver_max_order_by {
+    id: order_by
+    name: order_by
+}
+
+"order by min() on columns of table \"Driver\""
+input Driver_min_order_by {
+    id: order_by
+    name: order_by
+}
+
+"input type for inserting object relation for remote table \"Driver\""
+input Driver_obj_rel_insert_input {
+    data: Driver_insert_input!
+    on_conflict: Driver_on_conflict
+}
+
+"on conflict condition type for table \"Driver\""
+input Driver_on_conflict {
+    constraint: Driver_constraint!
+    update_columns: [Driver_update_column!]!
+    where: Driver_bool_exp
+}
+
+"ordering options when selecting data from \"Driver\""
+input Driver_order_by {
+    RaceResults_aggregate: RaceResult_aggregate_order_by
+    id: order_by
+    name: order_by
+}
+
+"primary key columns input for table: \"Driver\""
+input Driver_pk_columns_input {
+    id: uuid!
+}
+
+"input type for updating data in table \"Driver\""
+input Driver_set_input {
+    id: uuid
+    name: String
+}
+
+"expression to compare columns of type Int. All fields are combined with logical 'AND'."
+input Int_comparison_exp {
+    _eq: Int
+    _gt: Int
+    _gte: Int
+    _in: [Int!]
+    _is_null: Boolean
+    _lt: Int
+    _lte: Int
+    _neq: Int
+    _nin: [Int!]
+}
+
+"order by aggregate values of table \"RaceResult\""
+input RaceResult_aggregate_order_by {
+    avg: RaceResult_avg_order_by
+    count: order_by
+    max: RaceResult_max_order_by
+    min: RaceResult_min_order_by
+    stddev: RaceResult_stddev_order_by
+    stddev_pop: RaceResult_stddev_pop_order_by
+    stddev_samp: RaceResult_stddev_samp_order_by
+    sum: RaceResult_sum_order_by
+    var_pop: RaceResult_var_pop_order_by
+    var_samp: RaceResult_var_samp_order_by
+    variance: RaceResult_variance_order_by
+}
+
+"input type for inserting array relation for remote table \"RaceResult\""
+input RaceResult_arr_rel_insert_input {
+    data: [RaceResult_insert_input!]!
+    on_conflict: RaceResult_on_conflict
+}
+
+"order by avg() on columns of table \"RaceResult\""
+input RaceResult_avg_order_by {
+    points: order_by
+    position: order_by
+}
+
+"Boolean expression to filter rows from the table \"RaceResult\". All fields are combined with a logical 'AND'."
+input RaceResult_bool_exp {
+    Constructor: Constructor_bool_exp
+    Driver: Driver_bool_exp
+    Race: Race_bool_exp
+    _and: [RaceResult_bool_exp]
+    _not: RaceResult_bool_exp
+    _or: [RaceResult_bool_exp]
+    constructor_id: uuid_comparison_exp
+    driver_id: uuid_comparison_exp
+    id: uuid_comparison_exp
+    points: Int_comparison_exp
+    position: Int_comparison_exp
+    race_id: uuid_comparison_exp
+}
+
+"input type for incrementing integer column in table \"RaceResult\""
+input RaceResult_inc_input {
+    points: Int
+    position: Int
+}
+
+"input type for inserting data into table \"RaceResult\""
+input RaceResult_insert_input {
+    Constructor: Constructor_obj_rel_insert_input
+    Driver: Driver_obj_rel_insert_input
+    Race: Race_obj_rel_insert_input
+    constructor_id: uuid
+    driver_id: uuid
+    id: uuid
+    points: Int
+    position: Int
+    race_id: uuid
+}
+
+"order by max() on columns of table \"RaceResult\""
+input RaceResult_max_order_by {
+    constructor_id: order_by
+    driver_id: order_by
+    id: order_by
+    points: order_by
+    position: order_by
+    race_id: order_by
+}
+
+"order by min() on columns of table \"RaceResult\""
+input RaceResult_min_order_by {
+    constructor_id: order_by
+    driver_id: order_by
+    id: order_by
+    points: order_by
+    position: order_by
+    race_id: order_by
+}
+
+"input type for inserting object relation for remote table \"RaceResult\""
+input RaceResult_obj_rel_insert_input {
+    data: RaceResult_insert_input!
+    on_conflict: RaceResult_on_conflict
+}
+
+"on conflict condition type for table \"RaceResult\""
+input RaceResult_on_conflict {
+    constraint: RaceResult_constraint!
+    update_columns: [RaceResult_update_column!]!
+    where: RaceResult_bool_exp
+}
+
+"ordering options when selecting data from \"RaceResult\""
+input RaceResult_order_by {
+    Constructor: Constructor_order_by
+    Driver: Driver_order_by
+    Race: Race_order_by
+    constructor_id: order_by
+    driver_id: order_by
+    id: order_by
+    points: order_by
+    position: order_by
+    race_id: order_by
+}
+
+"primary key columns input for table: \"RaceResult\""
+input RaceResult_pk_columns_input {
+    id: uuid!
+}
+
+"input type for updating data in table \"RaceResult\""
+input RaceResult_set_input {
+    constructor_id: uuid
+    driver_id: uuid
+    id: uuid
+    points: Int
+    position: Int
+    race_id: uuid
+}
+
+"order by stddev() on columns of table \"RaceResult\""
+input RaceResult_stddev_order_by {
+    points: order_by
+    position: order_by
+}
+
+"order by stddev_pop() on columns of table \"RaceResult\""
+input RaceResult_stddev_pop_order_by {
+    points: order_by
+    position: order_by
+}
+
+"order by stddev_samp() on columns of table \"RaceResult\""
+input RaceResult_stddev_samp_order_by {
+    points: order_by
+    position: order_by
+}
+
+"order by sum() on columns of table \"RaceResult\""
+input RaceResult_sum_order_by {
+    points: order_by
+    position: order_by
+}
+
+"order by var_pop() on columns of table \"RaceResult\""
+input RaceResult_var_pop_order_by {
+    points: order_by
+    position: order_by
+}
+
+"order by var_samp() on columns of table \"RaceResult\""
+input RaceResult_var_samp_order_by {
+    points: order_by
+    position: order_by
+}
+
+"order by variance() on columns of table \"RaceResult\""
+input RaceResult_variance_order_by {
+    points: order_by
+    position: order_by
+}
+
+"order by aggregate values of table \"Race\""
+input Race_aggregate_order_by {
+    avg: Race_avg_order_by
+    count: order_by
+    max: Race_max_order_by
+    min: Race_min_order_by
+    stddev: Race_stddev_order_by
+    stddev_pop: Race_stddev_pop_order_by
+    stddev_samp: Race_stddev_samp_order_by
+    sum: Race_sum_order_by
+    var_pop: Race_var_pop_order_by
+    var_samp: Race_var_samp_order_by
+    variance: Race_variance_order_by
+}
+
+"input type for inserting array relation for remote table \"Race\""
+input Race_arr_rel_insert_input {
+    data: [Race_insert_input!]!
+    on_conflict: Race_on_conflict
+}
+
+"order by avg() on columns of table \"Race\""
+input Race_avg_order_by {
+    round: order_by
+}
+
+"Boolean expression to filter rows from the table \"Race\". All fields are combined with a logical 'AND'."
+input Race_bool_exp {
+    RaceResults: RaceResult_bool_exp
+    Season: Season_bool_exp
+    _and: [Race_bool_exp]
+    _not: Race_bool_exp
+    _or: [Race_bool_exp]
+    date: date_comparison_exp
+    id: uuid_comparison_exp
+    name: String_comparison_exp
+    round: Int_comparison_exp
+    season_id: uuid_comparison_exp
+}
+
+"input type for incrementing integer column in table \"Race\""
+input Race_inc_input {
+    round: Int
+}
+
+"input type for inserting data into table \"Race\""
+input Race_insert_input {
+    RaceResults: RaceResult_arr_rel_insert_input
+    Season: Season_obj_rel_insert_input
+    date: date
+    id: uuid
+    name: String
+    round: Int
+    season_id: uuid
+}
+
+"order by max() on columns of table \"Race\""
+input Race_max_order_by {
+    date: order_by
+    id: order_by
+    name: order_by
+    round: order_by
+    season_id: order_by
+}
+
+"order by min() on columns of table \"Race\""
+input Race_min_order_by {
+    date: order_by
+    id: order_by
+    name: order_by
+    round: order_by
+    season_id: order_by
+}
+
+"input type for inserting object relation for remote table \"Race\""
+input Race_obj_rel_insert_input {
+    data: Race_insert_input!
+    on_conflict: Race_on_conflict
+}
+
+"on conflict condition type for table \"Race\""
+input Race_on_conflict {
+    constraint: Race_constraint!
+    update_columns: [Race_update_column!]!
+    where: Race_bool_exp
+}
+
+"ordering options when selecting data from \"Race\""
+input Race_order_by {
+    RaceResults_aggregate: RaceResult_aggregate_order_by
+    Season: Season_order_by
+    date: order_by
+    id: order_by
+    name: order_by
+    round: order_by
+    season_id: order_by
+}
+
+"primary key columns input for table: \"Race\""
+input Race_pk_columns_input {
+    id: uuid!
+}
+
+"input type for updating data in table \"Race\""
+input Race_set_input {
+    date: date
+    id: uuid
+    name: String
+    round: Int
+    season_id: uuid
+}
+
+"order by stddev() on columns of table \"Race\""
+input Race_stddev_order_by {
+    round: order_by
+}
+
+"order by stddev_pop() on columns of table \"Race\""
+input Race_stddev_pop_order_by {
+    round: order_by
+}
+
+"order by stddev_samp() on columns of table \"Race\""
+input Race_stddev_samp_order_by {
+    round: order_by
+}
+
+"order by sum() on columns of table \"Race\""
+input Race_sum_order_by {
+    round: order_by
+}
+
+"order by var_pop() on columns of table \"Race\""
+input Race_var_pop_order_by {
+    round: order_by
+}
+
+"order by var_samp() on columns of table \"Race\""
+input Race_var_samp_order_by {
+    round: order_by
+}
+
+"order by variance() on columns of table \"Race\""
+input Race_variance_order_by {
+    round: order_by
+}
+
+"order by aggregate values of table \"Season\""
+input Season_aggregate_order_by {
+    count: order_by
+    max: Season_max_order_by
+    min: Season_min_order_by
+}
+
+"input type for inserting array relation for remote table \"Season\""
+input Season_arr_rel_insert_input {
+    data: [Season_insert_input!]!
+    on_conflict: Season_on_conflict
+}
+
+"Boolean expression to filter rows from the table \"Season\". All fields are combined with a logical 'AND'."
+input Season_bool_exp {
+    Races: Race_bool_exp
+    _and: [Season_bool_exp]
+    _not: Season_bool_exp
+    _or: [Season_bool_exp]
+    id: uuid_comparison_exp
+    name: String_comparison_exp
+}
+
+"input type for inserting data into table \"Season\""
+input Season_insert_input {
+    Races: Race_arr_rel_insert_input
+    id: uuid
+    name: String
+}
+
+"order by max() on columns of table \"Season\""
+input Season_max_order_by {
+    id: order_by
+    name: order_by
+}
+
+"order by min() on columns of table \"Season\""
+input Season_min_order_by {
+    id: order_by
+    name: order_by
+}
+
+"input type for inserting object relation for remote table \"Season\""
+input Season_obj_rel_insert_input {
+    data: Season_insert_input!
+    on_conflict: Season_on_conflict
+}
+
+"on conflict condition type for table \"Season\""
+input Season_on_conflict {
+    constraint: Season_constraint!
+    update_columns: [Season_update_column!]!
+    where: Season_bool_exp
+}
+
+"ordering options when selecting data from \"Season\""
+input Season_order_by {
+    Races_aggregate: Race_aggregate_order_by
+    id: order_by
+    name: order_by
+}
+
+"primary key columns input for table: \"Season\""
+input Season_pk_columns_input {
+    id: uuid!
+}
+
+"input type for updating data in table \"Season\""
+input Season_set_input {
+    id: uuid
+    name: String
+}
+
+"expression to compare columns of type String. All fields are combined with logical 'AND'."
+input String_comparison_exp {
+    _eq: String
+    _gt: String
+    _gte: String
+    _ilike: String
+    _in: [String!]
+    _is_null: Boolean
+    _like: String
+    _lt: String
+    _lte: String
+    _neq: String
+    _nilike: String
+    _nin: [String!]
+    _nlike: String
+    _nsimilar: String
+    _similar: String
+}
+
+"expression to compare columns of type date. All fields are combined with logical 'AND'."
+input date_comparison_exp {
+    _eq: date
+    _gt: date
+    _gte: date
+    _in: [date!]
+    _is_null: Boolean
+    _lt: date
+    _lte: date
+    _neq: date
+    _nin: [date!]
+}
+
+"expression to compare columns of type uuid. All fields are combined with logical 'AND'."
+input uuid_comparison_exp {
+    _eq: uuid
+    _gt: uuid
+    _gte: uuid
+    _in: [uuid!]
+    _is_null: Boolean
+    _lt: uuid
+    _lte: uuid
+    _neq: uuid
+    _nin: [uuid!]
+}
+
+
+scalar date
+
+scalar uuid

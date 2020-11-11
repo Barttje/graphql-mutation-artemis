@@ -1,0 +1,7 @@
+mutation InsertRace($date: date, $name: String, $season_id: uuid, $round: Int) {
+    insert_Race(objects: [{date: $date, name: $name, season_id: $season_id, round: $round}]) {
+        returning {
+            name
+        }
+    }
+}
